@@ -1,0 +1,35 @@
+# my global config
+global:
+  scrape_interval:     20s
+  evaluation_interval: 20s
+
+remote_write:
+- url: https://prometheus-blocks-prod-us-central1.grafana.net/api/prom/push
+  basic_auth:
+    username: <secret>
+    password: <secret>
+  #write_relabel_configs:
+   # - action: labelkeep
+    #  regex: "AIRMAR.+"
+  queue_config:
+    capacity: 2500
+    max_shards: 200
+    min_shards: 1
+    max_samples_per_send: 500
+    batch_send_deadline: 30s
+    min_backoff: 30ms13
+    max_backoff: 200ms
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+  
+scrape_configs:
+  - job_name: 'airmar'
+    static_configs:
+    - targets: ['localhost:4090']

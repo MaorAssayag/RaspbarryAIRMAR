@@ -1,0 +1,16 @@
+[Unit]
+Description=AIRMAR
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+
+User=<secret>
+ExecStart=/usr/bin/python3 <secret path to AIRMAR.py>
+Restart = on-failure
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy=multi-user.target
