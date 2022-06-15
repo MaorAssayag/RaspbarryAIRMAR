@@ -1,5 +1,5 @@
 # Raspbarry AIRMAR
-![alt tag](https://i.ibb.co/Jx0kh6Y/9a35c087-4fc7-4029-b7ca-0fb5f26fd47c.jpg)
+![alt tag](https://github.com/MaorAssayag/RaspbarryAIRMAR/blob/main/dashboard.jpg)
  Raspbarry pi 4 parsing NMEA2000 senteces from AIRMAR-WX150 and publishing the data with Prometheus remote-write.
  Weather metrics are beeing displayed in Grafana Cloud dashboard
  
